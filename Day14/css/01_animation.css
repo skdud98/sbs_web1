@@ -1,0 +1,50 @@
+* { margin: 0; padding: 0;}
+
+#wrap {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: 
+    linear-gradient(10deg, rgba(24,0,36,0.9724264705882353) 0%, rgba(138,35,132,1) 26%, rgba(92,121,9,1) 52%, rgba(255,141,0,1) 72%, rgba(136,0,255,1) 100%);;
+    text-align: center;
+    /* 애니메이션 */
+    animation: ball;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#wrap > h1 { line-height: 200px; color: white; }
+
+/* 애니메이션의 변경지점을 지정하는 속성 */
+@keyframes ball {
+     /* 시작위치 */
+    from {
+        left: 0;
+        transform: rotate(0deg);
+    }
+
+    25% {
+        left: 250px;
+        transform: rotate(180deg) /* translateY(-200px) */;
+    }
+
+    50% {
+        left: 500px;
+        transform: rotate(360deg);
+    }
+
+    75% {
+        left: 250px;
+        transform: rotate(180deg) /* translateY(-200px) */;
+    }
+
+    /* 종료위치 */
+    to {
+        left: 0;
+        transform: rotate(0deg);
+    }
+}
+
+/* translateY(-200px)  굴러다니면서 움직이게 할 수 있음 */
